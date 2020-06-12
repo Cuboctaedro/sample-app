@@ -1,0 +1,183 @@
+.menu {
+    position: absolute;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 100;
+    transition: transform 300ms ease-in-out;
+    &[hidden] {
+        display: flex;
+    }
+    &.is-visible {
+        transform: translateX(300px);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+
+
+    &__header {
+        background-image: url('img/portrait-blur.jpg');
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        background-color: rgba(7,31,135,.5);
+    }
+    .profile {
+        flex-grow: 0;
+        &__title {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            padding-top: 30px;
+            padding-left:30%;
+            font-size: $t_size_lg;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        &__content {
+            position: relative;
+            z-index: 1;
+            padding-top: 10px;
+            display: flex;
+        }
+        &__avatar {
+            width: 25%;
+            padding-left: 20px;
+            padding-right: 10px;
+        }
+        &__text {
+            width: 75%;
+        }
+        &__name {
+            margin: 0;
+            font-size: $t_size_xl;
+            font-weight: 200;
+        }
+        &__location {
+            margin: 0;
+            font-size: $t_size_sm;
+            font-weight: 200;
+        }
+        &__stats {
+            list-style: none;
+            margin: 0;
+            padding: 12px 0;
+            display: flex;
+        }
+        &__statsitem{
+            width: 50%;
+            display: flex;
+            flex-direction: column-reverse;
+            line-height: 1.1;
+            .stats__label {
+                font-size: $t_size_sm;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        background: linear-gradient(0deg, rgba(68,105,214,1) 0%, rgba(24,168,220,1) 100%);
+    }
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 60px;
+        padding-top: 10px;
+        color: $c_gray_light;
+        .icon {
+            height: 50px;
+            padding: 12px;
+        }
+    }
+    &__link {
+        border-bottom: 1px solid rgba(0,0,0,0.25);
+        line-height: 50px;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% - 60px);
+        color: $c_gray_light;
+        font-weight: 400;
+        .link__icon {
+            height: 50px;
+            padding: 16px;
+            color: $c_gray_light;
+            .number {
+                display: block;
+                width: 24px;
+                line-height: 24px;
+                text-align: center;
+                background-color: $c_red;
+                color: $c_white;
+                font-weight: 400;
+                border-radius: 2px;
+            }
+        }
+        .link__label {
+            padding-left: 20px;
+        }
+    }
+    &__item.is-active {
+        color: $c_white;
+        .icon {
+            color: $c_red;
+        }
+        .menu__link {
+            color: $c_white;
+            .icon {
+                color: $c_white;
+            }
+        }
+    }
+    &__item:hover {
+        color: $c_white;
+        .icon {
+            color: $c_white;
+        }
+        .menu__link {
+            color: $c_white;
+        }
+    }
+
+
+    &__out {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 60px;
+        color: $c_gray_light;
+        text-decoration: none;
+        font-weight: 400;
+        padding-right: 16px;
+        .icon {
+            padding: 16px;
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
