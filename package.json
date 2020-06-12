@@ -20,7 +20,6 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "dependencies": {
-    "@glidejs/glide": "^3.4.1",
-    "swiper": "^5.4.2"
+    "@glidejs/glide": "^3.4.1"
   }
 }

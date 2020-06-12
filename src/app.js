@@ -1,4 +1,3 @@
-import Swiper from 'swiper';
 import Glide from '@glidejs/glide';
 
 const activateTabs = () => {
